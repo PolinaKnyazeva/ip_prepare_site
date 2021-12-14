@@ -1,0 +1,140 @@
+/* general */
+html, body, div, span, object, iframe, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, 
+strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, 
+embed, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, 
+time, mark, audio, video, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+body {
+	background-color: #2B2B2B;
+	color: #BABABA;
+}
+a, a:hover, a:active {
+  text-decoration: none;
+  color: white;
+}
+.br-0 {
+	border-radius: 0px;
+}
+.mh-350 {
+	min-height: 350px;
+}
+.br {
+    white-space: pre-line;
+}
+/* end general */
+
+/*viewing_tickets*/
+.search_add_ticket_header {
+	margin-top: 6px;
+	margin-bottom: 10px;
+}
+/*end viewing_tickets*/
+
+/* create ticket/editing ticket */
+.dark_theme_input {
+	border-color: #5F9EA0;
+	background-color: #2B2B2B;
+	color: gainsboro;
+}
+.dark_theme_input:focus {
+	background-color: #2B2B2B;
+	color: gainsboro;
+}
+.ticket {
+	width: 100%;
+	border: 1px solid;
+	padding: 8px;
+}
+.input_answer {
+	min-height: 230px;
+}
+.tools_tag_bar {
+	height: 40px;
+	width: 100%;
+	border: 1px solid;
+	border-radius: 4px 4px 0 0;
+	border-bottom: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+
+}
+.bar_item {
+	color: #F0FFF0;
+	width: 40px;
+	height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 40px;
+    border-right: 1px solid;
+}
+.bar_item:hover{
+	background-color:cadetblue;
+}
+.content_bar_item{
+	font-size: 20px;
+    font-weight: 400;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: grey;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* end create ticket/editing ticket */
+
+/* viewing_topics */
+.content_title{
+	margin-bottom: 6px;
+}
+.search_add_ticket_header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.content_topics{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border-top: 1px solid #5F9EA0;
+}
+.topic{
+	padding: 6px 10px 6px 10px;
+	width: 100%;
+	min-height: 46px;
+	border: 1px solid #5F9EA0;
+	border-top: 0;
+}
+.topic_title_link{
+	color: #B0C4DE;
+	font-size: 18px;
+	font-weight: 500;
+}
+.topic_title_link:hover{
+	color:#B0C4DE;
+}
+.topic_date{
+	height: 24px;
+	color: #B0C4DE;
+	width: 100%;
+	text-align: right;
+}
+.empty_area{
+	height: 24px;
+}
+/* end viewing_topics */
+
+
+

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Тема {{ topic.title }}{% endblock %}
+
+{% block body %}
+
+<div class="search_add_ticket_header">
+    <form class="form-inline" method="GET">
+        <input class="form-control mr-sm-2 dark_theme_input" type="search" aria-label="Search"
+        name="search" placeholder="Поиск по содержанию билетов">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <a type="button" class="btn btn-success" href="/topics/{{ topic.topic_id }}/create_ticket">
+        Добавить билет
+    </a>
+</div>
+<div class="title_and_delete_theme">
+    <h2 class="content_title">Тема {{ topic.title }}</h2>
+    <a class="btn btn-danger" onclick='accept_delete_theme()'>Удалить тему</a>
+</div>
+
+<div class="content_tickets">
+{% for t in found_tickets %}
+    <div class="ticket">
+        <div class="text_ticket br">{{ t.text|safe }}</div>
+        <a class="btn btn-info" href="/topics/{{ topic.topic_id }}/recording/{{ t.ticket_id }}">Редактировать</a>
+        <a class="btn btn-danger" href="/topics/{{ topic.topic_id }}/delete/{{ t.ticket_id }}">Удалить</a>
+    </div>
+{% endfor %}
+</div>
+
+    <script>
+    function accept_delete_theme() {
+        var isAccepted = confirm("Вы действительно хотите удалить тему " + "{{ topic.title }}" + " ?");
+        if (isAccepted){
+            document.location.href = "/topics/delete/{{ topic.topic_id }}";
+            alert('Тема удалена.')
+        }
+    }
+    </script>
+
+{% endblock %}

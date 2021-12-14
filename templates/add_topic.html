@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Темы{% endblock %}
+
+{% block body %}
+
+    <h2 class="mb-3">Создание темы</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="mb-1">Введите название создаваемой темы</label>
+            <input class="form-control dark_theme_input" name="topic_title">
+            <small class="form-text text-muted">Использование ключевых слов в названии облегчит поиск темы, например номер группы,название дисциплины,номер курса или фамилия преподавателя(Б19-782-2,физика,Морозова)</small>
+
+            <label><input class="mr-2" type="checkbox" id="private_topic" value="a2"  onchange="showOrHidePassword()">Сделать тему приватной?</label><br>
+
+            <div class="hidden_form_password" id="hidden_form_password" style="display: none">
+                <label class="mb-1">Пароль темы</label>
+                <input class="form-control dark_theme_input" name="topic_password" id="topic_password">
+                <small class="form-text text-muted">Рассказав этот пароль другие пользователи смогут просматривать тему и модифицировать ваши билеты</small>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Создать тему</button>
+    </form>
+
+    <script>
+	function showOrHidePassword() {
+	var chbox;
+	var hidden_form;
+	chbox=document.getElementById('private_topic');
+	hidden_form=document.getElementById('hidden_form_password');
+		if (chbox.checked) {
+			hidden_form.style.display = "block";
+		}
+		else {
+			hidden_form.style.display = "none";
+			var input_pass = document.getElementById('topic_password');
+			input_pass.value="";
+		}
+	}
+</script>
+{% endblock %}
